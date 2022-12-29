@@ -1,7 +1,7 @@
 const data = [
     { name: 'Carlo', lastname: 'Del Monte', interests: ['musica', 'informatica', 'calcio', 'boxe', 'running','cinema', 'filosofia'] },
     { name: 'Alessandro', lastname: 'D\'Amato', interests: ['calcio', 'boxe'] },
-    { name: 'Danilo', lastname: 'Vachezez', interests: ['cucina', 'boxe', 'snowboard'] },
+    { name: 'Danilo', lastname: 'Vachez', interests: ['cucina', 'boxe', 'snowboard'] },
     { name: 'Alessandro', lastname: 'Costa', interests: ['architettura', 'kick-boxing', 'crossfit'] },
     { name: 'Gabriele', lastname: 'Merlonghi', interests: ['crescita personale', 'cinema', 'musica'] },
     { name: 'Alessandra', lastname: 'Paesani', interests: ['coding', 'moda'] },
