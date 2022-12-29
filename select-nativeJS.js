@@ -4,7 +4,7 @@ const data = [
     { name: 'Danilo', lastname: 'Vachez', interests: ['cucina', 'boxe', 'snowboard'] },
     { name: 'Alessandro', lastname: 'Costa', interests: ['architettura', 'kick-boxing', 'crossfit'] },
     { name: 'Gabriele', lastname: 'Merlonghi', interests: ['crescita personale', 'cinema', 'musica'] },
-    { name: 'Alessandra', lastname: 'Paesani', interests: ['coding', 'moda'] },
+    { name: 'Alessandra', lastname: 'Paesani', interests: ['informatica', 'moda'] },
     { name: 'Nicole', lastname: 'Casavola', interests: ['enogastronima', 'moda'] },
 ];
 
