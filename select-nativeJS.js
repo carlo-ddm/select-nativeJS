@@ -1,11 +1,11 @@
 const data = [
-    { name: 'Carlo', lastname: 'Del Monte', interests: ['musica', 'informatica', 'calcio', 'boxe', 'running','cinema', 'filosofia'] },
-    { name: 'Alessandro', lastname: 'D\'Amato', interests: ['calcio', 'boxe'] },
-    { name: 'Danilo', lastname: 'Vachez', interests: ['cucina', 'boxe', 'snowboard'] },
-    { name: 'Alessandro', lastname: 'Costa', interests: ['architettura', 'kick-boxing', 'crossfit'] },
-    { name: 'Gabriele', lastname: 'Merlonghi', interests: ['crescita personale', 'cinema', 'musica'] },
-    { name: 'Alessandra', lastname: 'Paesani', interests: ['informatica', 'moda'] },
-    { name: 'Nicole', lastname: 'Casavola', interests: ['enogastronima', 'moda'] },
+    { name: 'carlo', lastname: 'del monte', interests: ['musica', 'informatica', 'calcio', 'boxe', 'running','cinema', 'filosofia'] },
+    { name: 'alessandro', lastname: 'd\'amato', interests: ['calcio', 'boxe'] },
+    { name: 'danilo', lastname: 'vachez', interests: ['cucina', 'boxe', 'snowboard'] },
+    { name: 'alessandro', lastname: 'costa', interests: ['architettura', 'kick-boxing', 'crossfit'] },
+    { name: 'gabriele', lastname: 'merlonghi', interests: ['crescita personale', 'cinema', 'musica'] },
+    { name: 'alessandra', lastname: 'paesani', interests: ['informatica', 'moda'] },
+    { name: 'nicole', lastname: 'casavola', interests: ['enogastronima', 'moda'] },
 ];
 
 const interests = getInterests();
@@ -37,7 +37,8 @@ function getNameAndRemoveIt(value){
     });
 
     let filteredData = data.filter((person) => { return person ? person.interests.includes(value) : '' });
-    let result = filteredData.map((person) => {return person.name + ' ' + person.lastname});
+    let result = filteredData.map((person) => {return person.name.charAt(0).toUpperCase() + person.name.slice(1) + ' ' + person.lastname.charAt(0).toUpperCase() + person.lastname.slice(1)});
+    
 
     result.sort().forEach(n => {
         const p = document.createElement('p');
