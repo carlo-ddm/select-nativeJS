@@ -9,6 +9,8 @@ const data = [
     { name: 'fabio massimo', lastname: 'comini', interests: ['calcio', 'boxe'] },
 ];
 
+// Logiche relative alla gestione del tag select
+
 const interests = getInterests();
 setSelect(interests);
 
