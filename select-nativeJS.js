@@ -49,11 +49,14 @@ function getNameAndRemoveIt(value){
 }
 
 function twoWords(word){
-    const splitted = word.split(' ');
+    const splitSpace = word.split(' ');
+    const splitApostrophe = word.split('\'')
 
     for (let i = 0; i <= word.length; i++) {
         if (word.includes(' ')) {
-            return splitted[0].charAt(0).toUpperCase() + splitted[0].slice(1) + ' ' + splitted[1].charAt(0).toUpperCase() + splitted[1].slice(1)
+            return splitSpace[0].charAt(0).toUpperCase() + splitSpace[0].slice(1) + ' ' + splitSpace[1].charAt(0).toUpperCase() + splitSpace[1].slice(1)
+        } else if (word.includes('\'')) {
+            return splitApostrophe[0].charAt(0).toUpperCase() + splitApostrophe[0].slice(1) + '\'' + splitApostrophe[1].charAt(0).toUpperCase() + splitApostrophe[1].slice(1)
         } else {
             return word.charAt(0).toUpperCase() + word.slice(1)
         }
