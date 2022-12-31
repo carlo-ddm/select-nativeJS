@@ -30,7 +30,6 @@ function getNameAndRemoveIt(value){
 
     const div = document.getElementById('container');
 
-    // Metodo per trasformare una collection in un array
     let arrayRemover = Array.from(document.getElementsByClassName('result'));
 
     arrayRemover.forEach(p => {
