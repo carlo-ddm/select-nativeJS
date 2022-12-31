@@ -1,6 +1,16 @@
+* {
+    padding-right: 5px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+select {
+    border: 1px solid lightblue;
+}
+
 .form-container {
     width: 500px;
-    height: 500px;
-    border: 1px solid black;
-    background-color: burlywood;
+    padding: 10px;
+    border-right: 1px solid lightblue;
+    border-bottom: 1px solid lightblue;
 }
