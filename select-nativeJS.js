@@ -37,8 +37,7 @@ function getNameAndRemoveIt(value){
     });
 
     let filteredData = data.filter((person) => { return person ? person.interests.includes(value) : '' });
-    let result = filteredData.map((person) => {return person.name.charAt(0).toUpperCase() + person.name.slice(1) + ' ' + person.lastname.charAt(0).toUpperCase() + person.lastname.slice(1)});
-    
+    let result = filteredData.map((person) => {return person.name.charAt(0).toUpperCase() + person.name.slice(1) + ' ' + twoWordsLastName(person.lastname)});
 
     result.sort().forEach(n => {
         const p = document.createElement('p');
@@ -47,3 +46,17 @@ function getNameAndRemoveIt(value){
         div.append(p)
     });
 }
+
+function twoWordsLastName(lastname){
+    const splitted = lastname.split(' ');
+
+    for (let i = 0; i <= lastname.length; i++) {
+        if (lastname.includes(' ')) {
+            return splitted[0].charAt(0).toUpperCase() + splitted[0].slice(1) + ' ' + splitted[1].charAt(0).toUpperCase() + splitted[1].slice(1)
+        } else {
+            return lastname.charAt(0).toUpperCase() + lastname.slice(1)
+        }
+    }
+}
+
+
