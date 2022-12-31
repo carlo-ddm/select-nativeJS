@@ -9,23 +9,23 @@ const data = [
     { name: 'fabio massimo', lastname: 'comini', interests: ['calcio', 'boxe'] },
 ];
 
-const interestsList = [
-    'musica',
-    'nuoto',
-    'snowboarding',
-    'enogastronomia',
-    'paracadutismo',
-    'bungee-jumping',
-    'arti marziali',
-    'Correre in auto/moto/go-kart',
-    'Arrampicata',
-    'Sci nautico',
-    'Parkour',
-    'Snowboard',
-    'Sci',
-    'Paintball/soft-air',
-    'Rugby'
-];
+// const interestsList = [
+//     'musica',
+//     'nuoto',
+//     'snowboarding',
+//     'enogastronomia',
+//     'paracadutismo',
+//     'bungee-jumping',
+//     'arti marziali',
+//     'Correre in auto/moto/go-kart',
+//     'Arrampicata',
+//     'Sci nautico',
+//     'Parkour',
+//     'Snowboard',
+//     'Sci',
+//     'Paintball/soft-air',
+//     'Rugby'
+// ];
 
 // Logiche relative alla gestione del tag select
 const interests = getInterests();
