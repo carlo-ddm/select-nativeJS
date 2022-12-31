@@ -10,31 +10,31 @@ const data = [
 ];
 
 const interests = getInterests();
-setSelect(interests)
+setSelect(interests);
 
 function getInterests(){
     let allIntersts = [];
     data.map((obj) => { return obj.interests.forEach((i) => { !allIntersts.includes(i) ? allIntersts.push(i) : '' }) })
-    return allIntersts
+    return allIntersts;
 }
 
 function setSelect(interests){
     const select = document.getElementById('select');
     interests.sort().forEach(int => {
-        const option = new Option(int,int)
-        select.append(option)
+        const option = new Option(int,int);
+        select.append(option);
     })
 }
 
 function getNameAndRemoveIt(value){
 
-    const div = document.getElementById('container')
+    const div = document.getElementById('container');
 
     // Metodo per trasformare una collection in un array
-    let arrayRemover = Array.from(document.getElementsByClassName('result'))
+    let arrayRemover = Array.from(document.getElementsByClassName('result'));
 
     arrayRemover.forEach(p => {
-        p.remove()
+        p.remove();
     });
 
     let filteredData = data.filter((person) => { return person ? person.interests.includes(value) : '' });
@@ -42,23 +42,23 @@ function getNameAndRemoveIt(value){
 
     result.sort().forEach(n => {
         const p = document.createElement('p');
-        p.classList.add('result')
-        p.innerHTML = n
-        div.append(p)
+        p.classList.add('result');
+        p.innerHTML = n;
+        div.append(p);
     });
 }
 
 function twoWords(word){
     const splitSpace = word.split(' ');
-    const splitApostrophe = word.split('\'')
+    const splitApostrophe = word.split('\'');
 
     for (let i = 0; i <= word.length; i++) {
         if (word.includes(' ')) {
-            return splitSpace[0].charAt(0).toUpperCase() + splitSpace[0].slice(1) + ' ' + splitSpace[1].charAt(0).toUpperCase() + splitSpace[1].slice(1)
+            return splitSpace[0].charAt(0).toUpperCase() + splitSpace[0].slice(1) + ' ' + splitSpace[1].charAt(0).toUpperCase() + splitSpace[1].slice(1);
         } else if (word.includes('\'')) {
-            return splitApostrophe[0].charAt(0).toUpperCase() + splitApostrophe[0].slice(1) + '\'' + splitApostrophe[1].charAt(0).toUpperCase() + splitApostrophe[1].slice(1)
+            return splitApostrophe[0].charAt(0).toUpperCase() + splitApostrophe[0].slice(1) + '\'' + splitApostrophe[1].charAt(0).toUpperCase() + splitApostrophe[1].slice(1);
         } else {
-            return word.charAt(0).toUpperCase() + word.slice(1)
+            return word.charAt(0).toUpperCase() + word.slice(1);
         }
     }
 }
