@@ -13,18 +13,24 @@ const interests = getInterests();
 setSelect(interests);
 
 function getInterests(){
+
     let allIntersts = [];
+
     data.map((obj) => { return obj.interests.forEach((i) => { !allIntersts.includes(i) ? allIntersts.push(i) : '' }) })
     return allIntersts;
 }
 
+
 function setSelect(interests){
+
     const select = document.getElementById('select');
+
     interests.sort().forEach(int => {
         const option = new Option(int.charAt(0).toUpperCase() + int.slice(1), int);
         select.append(option);
     })
 }
+
 
 function getNameAndRemoveIt(value){
 
@@ -37,27 +43,38 @@ function getNameAndRemoveIt(value){
     });
 
     let filteredData = data.filter((person) => { return person ? person.interests.includes(value) : '' });
-    let result = filteredData.map((person) => {return twoWords(person.name) + ' ' + twoWords(person.lastname)});
+    let result = filteredData.map((person) => { return twoWords(person.name) + ' ' + twoWords(person.lastname) });
 
     result.sort().forEach(n => {
+
         const p = document.createElement('p');
         p.classList.add('result');
         p.innerHTML = n;
         div.append(p);
+
     });
 }
 
+
 function twoWords(word){
+
     const splitSpace = word.split(' ');
     const splitApostrophe = word.split('\'');
 
     for (let i = 0; i <= word.length; i++) {
+
         if (word.includes(' ')) {
+
             return splitSpace[0].charAt(0).toUpperCase() + splitSpace[0].slice(1) + ' ' + splitSpace[1].charAt(0).toUpperCase() + splitSpace[1].slice(1);
+
         } else if (word.includes('\'')) {
+
             return splitApostrophe[0].charAt(0).toUpperCase() + splitApostrophe[0].slice(1) + '\'' + splitApostrophe[1].charAt(0).toUpperCase() + splitApostrophe[1].slice(1);
+
         } else {
+
             return word.charAt(0).toUpperCase() + word.slice(1);
+
         }
     }
 }
