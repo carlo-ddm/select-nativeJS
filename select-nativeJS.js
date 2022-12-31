@@ -21,7 +21,7 @@ function getInterests(){
 function setSelect(interests){
     const select = document.getElementById('select');
     interests.sort().forEach(int => {
-        const option = new Option(int,int);
+        const option = new Option(int.charAt(0).toUpperCase() + int.slice(1), int);
         select.append(option);
     })
 }
