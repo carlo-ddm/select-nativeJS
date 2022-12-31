@@ -6,6 +6,7 @@ const data = [
     { name: 'gabriele', lastname: 'merlonghi', interests: ['crescita personale', 'cinema', 'musica'] },
     { name: 'alessandra', lastname: 'paesani', interests: ['informatica', 'moda'] },
     { name: 'nicole', lastname: 'casavola', interests: ['enogastronima', 'moda'] },
+    { name: 'fabio massimo', lastname: 'comini', interests: ['calcio', 'boxe'] },
 ];
 
 const interests = getInterests();
@@ -37,7 +38,7 @@ function getNameAndRemoveIt(value){
     });
 
     let filteredData = data.filter((person) => { return person ? person.interests.includes(value) : '' });
-    let result = filteredData.map((person) => {return person.name.charAt(0).toUpperCase() + person.name.slice(1) + ' ' + twoWordsLastName(person.lastname)});
+    let result = filteredData.map((person) => {return twoWords(person.name) + ' ' + twoWords(person.lastname)});
 
     result.sort().forEach(n => {
         const p = document.createElement('p');
@@ -47,14 +48,14 @@ function getNameAndRemoveIt(value){
     });
 }
 
-function twoWordsLastName(lastname){
-    const splitted = lastname.split(' ');
+function twoWords(word){
+    const splitted = word.split(' ');
 
-    for (let i = 0; i <= lastname.length; i++) {
-        if (lastname.includes(' ')) {
+    for (let i = 0; i <= word.length; i++) {
+        if (word.includes(' ')) {
             return splitted[0].charAt(0).toUpperCase() + splitted[0].slice(1) + ' ' + splitted[1].charAt(0).toUpperCase() + splitted[1].slice(1)
         } else {
-            return lastname.charAt(0).toUpperCase() + lastname.slice(1)
+            return word.charAt(0).toUpperCase() + word.slice(1)
         }
     }
 }
