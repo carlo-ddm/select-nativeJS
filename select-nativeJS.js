@@ -11,22 +11,84 @@ const data = [
 
 
 const interestsList = [
-    'musica',
-    'nuoto',
-    'snowboarding',
-    'enogastronomia',
-    'paracadutismo',
-    'bungee-jumping',
-    'arti marziali',
-    'Correre in auto/moto/go-kart',
-    'Arrampicata',
-    'Sci nautico',
-    'Parkour',
-    'Snowboard',
-    'Sci',
-    'Paintball/soft-air',
-    'Rugby'
-];
+    'Stampa 3D',
+    'Recitazione',
+    'Radioamatore',
+    'Twirling',
+    'Giochi da tavolo',
+    'Restauro di libri',
+    'Cabaret',
+    'Calligrafia',
+    'Fabbricazione di candele',
+    'Tostare il caffè',
+    'Libri da colorare',
+    'Programmazione al computer',
+    'Cucina',
+    'Cosplay',
+    'Raccolta di buoni d\'acquisto',
+    'Scrittura creativa',
+    'Uncinetto',
+    'Punto croce',
+    'Parole crociate',
+    'Crittografia',
+    'Danza',
+    'Arte digitali',
+    'Dramma',
+    'Disegno',
+    'Elettronica',
+    'Ricamo',
+    'Fantasy sport',
+    'Moda',
+    'Acquariofilia',
+    'Flowerdesigning',
+    'Apprendimento delle lingue straniere',
+    'Gioco (giochi da tavolo e giochi di ruolo)',
+    'Genealogia',
+    'Vetro soffiato',
+    'Birra fatta in casa',
+    'Pattinaggio sul ghiaccio',
+    'Creazione di gioielli',
+    'Puzzle',
+    'Giocoleria',
+    'Scheggiatura',
+    'Fabbricazione di coltelli',
+    'Maglieria',
+    'Merletto',
+    'Lapidario',
+    'Lavorazione del cuoio',
+    'Lego',
+    'Ascoltare musica',
+    'Lavorazione a macchina',
+    'Macramé',
+    'Lavorazione dei metalli',
+    'Modellismo',
+    'Origami',
+    'Pittura',
+    'Animali domestici',
+    'Filatelia',
+    'Fotografia',
+    'Suonare strumenti musicali',
+    'Ceramica',
+    'Puzzle',
+    'Quilling',
+    'Quilting',
+    'Lettura',
+    'Scrapbooking',
+    'Scultura',
+    'Cucito',
+    'Canto',
+    'Stand-up comedy',
+    'Ping-pong',
+    'Videogiochi',
+    'Guardare dei film',
+    'Navigare sul web',
+    'Intaglio del legno',
+    'Lavorazione del legno',
+    'Scrittura',
+    'Yo-yo',
+    'Yoga'
+]
+   
 
 
 // Logiche relative alla gestione del tag select
@@ -105,12 +167,14 @@ function twoWords(word){
 function getBadge(intsList) {
 
     const div =  document.getElementById('badges');
-    for (let i = 0; i < intsList.length; i++) {
+    for (let i = 0; i < (intsList.length / 5); i++) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
-        span.innerHTML= interests[i];
+        span.value = intsList[i];
+        span.innerHTML = intsList[i];
+        span.addEventListener('click', () => {
+            span.style.display = 'none';
+        })
         div.append(span);
     }
 }
-
-
