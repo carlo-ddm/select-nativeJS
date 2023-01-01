@@ -176,7 +176,6 @@ function getBadge(intsList) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
-        console.log(span.value);
         span.innerHTML = intsList[i];
         span.addEventListener('click', () => {
             span.style.display = 'none';
@@ -208,7 +207,5 @@ function add() {
     }
 
     data.push(newUser)
-    console.log('new data - > ',data);
-
-    
+    console.log('new data -> ',data);
 }
