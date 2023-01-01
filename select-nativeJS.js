@@ -105,6 +105,7 @@ function getInterests(){
 }
 
 
+
 function setSelect(interests){
 
     const select = document.getElementById('select');
@@ -114,6 +115,7 @@ function setSelect(interests){
         select.append(option);
     })
 }
+
 
 
 function getNameAndRemoveIt(value){
@@ -140,6 +142,7 @@ function getNameAndRemoveIt(value){
 }
 
 
+
 function twoWords(word){
 
     const splitSpace = word.split(' ');
@@ -163,9 +166,11 @@ function twoWords(word){
     }
 }
 
-// CHIPS
-function getBadge(intsList) {
 
+
+// Badges
+function getBadge(intsList) {
+    
     const div =  document.getElementById('badges');
     for (let i = 0; i < (intsList.length / 5); i++) {
         const span = document.createElement('span');
@@ -175,11 +180,17 @@ function getBadge(intsList) {
         span.innerHTML = intsList[i];
         span.addEventListener('click', () => {
             span.style.display = 'none';
+            newUserInt.push(span.value)
+            console.log(newUserInt);
         })
         div.append(span);
     }
 }
 
+
+
+// New User
+const newUserInt = []
 function add() {
     
     const datas = document.getElementById('datas');
@@ -188,13 +199,16 @@ function add() {
     const newUser = {
         name: '',
         lastname: '',
-        interests: []
+        interests: newUserInt,
     }
 
     for (let i = 0; i < datas.length; i++) {
         newUser.name = document.getElementById('inputName').value;
         newUser.lastname = document.getElementById('inputLastname').value;
     }
+
+    data.push(newUser)
+    console.log('new data - > ',data);
 
     
 }
