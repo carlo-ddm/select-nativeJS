@@ -139,7 +139,7 @@ function getNameAndRemoveIt(value){
     });
 }
 
-
+// Logica doppia parola in inputs
 function twoWords(word){
 
     const splitSpace = word.split(' ');
@@ -203,7 +203,7 @@ function add() {
     // Reset Display
     document.getElementById('inputName').value = '';
     document.getElementById('inputLastname').value = '';
-    // Probbile nuovo ciclo per ricaricare la lista di interessi --> riciclo la funzione 'getBadge'
+    // Ciclo per ricaricare la lista di interessi --> riciclo la funzione 'getBadge'
     getBadge(interestsList);
 }
 
