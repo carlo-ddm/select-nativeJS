@@ -199,4 +199,10 @@ function add() {
 
     // Reset
     newUserInt = []
+    
+    // Reset Display
+    document.getElementById('inputName').value = '';
+    document.getElementById('inputLastname').value = '';
+    // Probbile nuovo ciclo per ricaricare la lista di interessi
 }
+
