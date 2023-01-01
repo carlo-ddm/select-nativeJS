@@ -171,10 +171,30 @@ function getBadge(intsList) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
+        console.log(span.value);
         span.innerHTML = intsList[i];
         span.addEventListener('click', () => {
             span.style.display = 'none';
         })
         div.append(span);
     }
+}
+
+function add() {
+    
+    const datas = document.getElementById('datas');
+    console.log(datas);
+
+    const newUser = {
+        name: '',
+        lastname: '',
+        interests: []
+    }
+
+    for (let i = 0; i < datas.length; i++) {
+        newUser.name = document.getElementById('inputName').value;
+        newUser.lastname = document.getElementById('inputLastname').value;
+    }
+
+    
 }
