@@ -203,6 +203,7 @@ function add() {
     // Reset Display
     document.getElementById('inputName').value = '';
     document.getElementById('inputLastname').value = '';
-    // Probbile nuovo ciclo per ricaricare la lista di interessi
+    // Probbile nuovo ciclo per ricaricare la lista di interessi --> riciclo la funzione 'getBadge'
+    getBadge(interestsList);
 }
 
