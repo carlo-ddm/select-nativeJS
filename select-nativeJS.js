@@ -90,7 +90,6 @@ const interestsList = [
 ]
    
 
-
 // Logiche relative alla gestione del tag select
 const interests = getInterests();
 setSelect(interests);
@@ -106,7 +105,6 @@ function getInterests(){
 }
 
 
-
 function setSelect(interests){
 
     const select = document.getElementById('select');
@@ -116,7 +114,6 @@ function setSelect(interests){
         select.append(option);
     })
 }
-
 
 
 function getNameAndRemoveIt(value){
@@ -143,7 +140,6 @@ function getNameAndRemoveIt(value){
 }
 
 
-
 function twoWords(word){
 
     const splitSpace = word.split(' ');
@@ -168,7 +164,6 @@ function twoWords(word){
 }
 
 
-
 // Badges
 function getBadge(intsList) {
     
@@ -183,7 +178,7 @@ function getBadge(intsList) {
         // Event
         span.addEventListener('click', () => {
             span.style.display = 'none';
-            newUserInt.push(span.value)
+            newUserInt.push(span.value);
         })
 
         div.append(span);
@@ -191,9 +186,17 @@ function getBadge(intsList) {
 }
 
 
-
 // New User
 function add() {
-    console.log(newUserInt);
+
+    let user = {
+        name: document.getElementById('inputName').value,
+        lastName: document.getElementById('inputLastname').value,
+        interests: newUserInt
+    }
+
+    data.push(user);
+
+    // Reset
     newUserInt = []
 }
