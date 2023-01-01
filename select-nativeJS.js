@@ -172,7 +172,7 @@ function twoWords(word){
 function getBadge(intsList) {
     
     const div =  document.getElementById('badges');
-    for (let i = 0; i < (intsList.length / 5); i++) {
+    for (let i = 0; i < intsList.length; i++) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
@@ -206,6 +206,19 @@ function add() {
         newUser.lastname = document.getElementById('inputLastname').value;
     }
 
+    const options = Array.from(document.getElementsByTagName('option')) 
+    options.forEach(op => {
+        op.remove()
+        console.log(op);
+    });
+
     data.push(newUser)
-    console.log('new data -> ',data);
+    console.log('new data --> ',data);
+
+    for (let i = 0; i < newUser.interests.length; i++) {
+        interests.push(newUser.interests[i]);
+    }
+
+    setSelect(interests)
+
 }
