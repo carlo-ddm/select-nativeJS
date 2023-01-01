@@ -94,6 +94,7 @@ const interestsList = [
 // Logiche relative alla gestione del tag select
 const interests = getInterests();
 setSelect(interests);
+let newUserInt = [];
 getBadge(interestsList);
 
 function getInterests(){
@@ -172,16 +173,19 @@ function twoWords(word){
 function getBadge(intsList) {
     
     const div =  document.getElementById('badges');
+
     for (let i = 0; i < intsList.length; i++) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
         span.innerHTML = intsList[i];
+
+        // Event
         span.addEventListener('click', () => {
             span.style.display = 'none';
             newUserInt.push(span.value)
-            console.log(newUserInt);
         })
+
         div.append(span);
     }
 }
@@ -189,36 +193,7 @@ function getBadge(intsList) {
 
 
 // New User
-const newUserInt = []
 function add() {
-    
-    const datas = document.getElementById('datas');
-    console.log(datas);
-
-    const newUser = {
-        name: '',
-        lastname: '',
-        interests: newUserInt,
-    }
-
-    for (let i = 0; i < datas.length; i++) {
-        newUser.name = document.getElementById('inputName').value;
-        newUser.lastname = document.getElementById('inputLastname').value;
-    }
-
-    const options = Array.from(document.getElementsByTagName('option')) 
-    options.forEach(op => {
-        op.remove()
-        console.log(op);
-    });
-
-    data.push(newUser)
-    console.log('new data --> ',data);
-
-    for (let i = 0; i < newUser.interests.length; i++) {
-        interests.push(newUser.interests[i]);
-    }
-
-    setSelect(interests)
-
+    console.log(newUserInt);
+    newUserInt = []
 }
