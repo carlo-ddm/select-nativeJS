@@ -9,27 +9,30 @@ const data = [
     { name: 'fabio massimo', lastname: 'comini', interests: ['calcio', 'boxe'] },
 ];
 
-// const interestsList = [
-//     'musica',
-//     'nuoto',
-//     'snowboarding',
-//     'enogastronomia',
-//     'paracadutismo',
-//     'bungee-jumping',
-//     'arti marziali',
-//     'Correre in auto/moto/go-kart',
-//     'Arrampicata',
-//     'Sci nautico',
-//     'Parkour',
-//     'Snowboard',
-//     'Sci',
-//     'Paintball/soft-air',
-//     'Rugby'
-// ];
+
+const interestsList = [
+    'musica',
+    'nuoto',
+    'snowboarding',
+    'enogastronomia',
+    'paracadutismo',
+    'bungee-jumping',
+    'arti marziali',
+    'Correre in auto/moto/go-kart',
+    'Arrampicata',
+    'Sci nautico',
+    'Parkour',
+    'Snowboard',
+    'Sci',
+    'Paintball/soft-air',
+    'Rugby'
+];
+
 
 // Logiche relative alla gestione del tag select
 const interests = getInterests();
 setSelect(interests);
+getBadge(interestsList);
 
 function getInterests(){
 
@@ -95,6 +98,18 @@ function twoWords(word){
             return word.charAt(0).toUpperCase() + word.slice(1);
 
         }
+    }
+}
+
+// CHIPS
+function getBadge(intsList) {
+
+    const div =  document.getElementById('badges');
+    for (let i = 0; i < intsList.length; i++) {
+        const span = document.createElement('span');
+        span.className = 'badge badge-pill';
+        span.innerHTML= interests[i];
+        div.append(span);
     }
 }
 

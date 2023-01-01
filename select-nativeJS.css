@@ -17,3 +17,15 @@ select {
     border-right: 1px solid lightblue;
     border-bottom: 1px solid lightblue;
 }
+
+span {
+    margin: 3px;
+    color: lightblue !important;
+    border: 1px solid lightblue;
+}
+
+span:hover {
+    color: rgb(16, 127, 164) !important;
+    border-color: rgb(16, 127, 164) !important;
+    cursor: pointer;
+}
