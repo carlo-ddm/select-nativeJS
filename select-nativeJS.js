@@ -169,11 +169,14 @@ function getBadge(intsList) {
     
     const div =  document.getElementById('badges');
 
-    for (let i = 0; i < intsList.length; i++) {
+    // If ???
+
+    for (let i = 0; i < Math.round((intsList.length / 5)); i++) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
         span.innerHTML = intsList[i];
+        console.log('watch -->', intsList[i + 1]);
 
         // Event
         span.addEventListener('click', () => {
@@ -196,6 +199,7 @@ function add() {
     }
 
     data.push(user);
+    console.log(data);
 
     // Reset
     newUserInt = []
@@ -203,7 +207,7 @@ function add() {
     // Reset Display
     document.getElementById('inputName').value = '';
     document.getElementById('inputLastname').value = '';
-    // Ciclo per ricaricare la lista di interessi --> riciclo la funzione 'getBadge'
-    getBadge(interestsList);
+    // Ciclo per ricaricare la lista di interessi --> riciclo la funzione 'getBadge' | err: prima scaricare
+    // getBadge(interestsList);
 }
 
