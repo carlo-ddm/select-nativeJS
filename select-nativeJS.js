@@ -166,27 +166,42 @@ function twoWords(word){
 
 // Badges
 function getBadge(intsList) {
-    
+
     const div =  document.getElementById('badges');
 
     // If ???
 
-    for (let i = 0; i < Math.round((intsList.length / 5)); i++) {
+    for (let i = 0; i < intsList.length; i++) {
         const span = document.createElement('span');
         span.className = 'badge badge-pill';
         span.value = intsList[i];
         span.innerHTML = intsList[i];
-        console.log('watch -->', intsList[i + 1]);
+
+        if (i > (Math.round(intsList.length / 5))) {
+            span.style.display = 'none';
+        }
+    
 
         // Event
         span.addEventListener('click', () => {
             span.style.display = 'none';
-            newUserInt.push(span.value);
+            newUserInt.push(span.value);        
+            
+            let counter = 1;
+            for (let i = Math.round(intsList.length / 5) + counter; i < intsList.length; i++) {
+                if (i == Math.round(intsList.length / 5) + counter && flag) {
+                    console.log(Math.round(intsList.length / 5) + counter, counter);
+                } else  {
+                    counter++
+                }
+
+            }
         })
 
         div.append(span);
     }
 }
+
 
 
 // New User
