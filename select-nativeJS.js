@@ -187,17 +187,27 @@ function getBadge(intsList) {
             span.style.display = 'none';
             newUserInt.push(span.value);        
             
-            let counter = 1;
-            for (let i = Math.round(intsList.length / 5) + counter; i < intsList.length; i++) {
-                if (i == Math.round(intsList.length / 5) + counter && flag) {
-                    console.log(Math.round(intsList.length / 5) + counter, counter);
-                } else  {
-                    counter++
+            for (let i = Math.round(intsList.length / 5) + 1; i < intsList.length; i++) {
+                if (i == Math.round(intsList.length / 5) + 1) {
+
+                    console.log('check', Math.round(intsList.length / 5) + 1);
+
+                    const span = document.createElement('span');
+                    span.className = 'badge badge-pill';
+                    span.value = intsList[i];
+                    span.innerHTML = intsList[i];
+
+                    // Checks
+                    console.log('watch',intsList[i]);
+                    console.log('array',intsList);
+                    console.log(i);
+
+                    intsList.splice(i , 1);
                 }
 
             }
         })
-
+        
         div.append(span);
     }
 }
