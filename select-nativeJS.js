@@ -197,6 +197,13 @@ function getBadge(intsList) {
                     span.value = intsList[i];
                     span.innerHTML = intsList[i];
 
+                    // Solution || find solution for repeating code in addEventListner
+                    span.addEventListener('click',() =>{
+                        console.log('/try');
+                        span.style.display = 'none';
+                        newUserInt.push(span.value);
+                    })
+
                     // Bug || -> spans cannot be selected
                     div.append(span)
 
