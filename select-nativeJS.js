@@ -197,6 +197,9 @@ function getBadge(intsList) {
                     span.value = intsList[i];
                     span.innerHTML = intsList[i];
 
+                    // Bug || -> spans cannot be selected
+                    div.append(span)
+
                     // Checks
                     console.log('watch',intsList[i]);
                     console.log('array',intsList);
@@ -207,7 +210,7 @@ function getBadge(intsList) {
 
             }
         })
-        
+
         div.append(span);
     }
 }
